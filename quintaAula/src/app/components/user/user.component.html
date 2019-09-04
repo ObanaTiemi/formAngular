@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Editar usuário {{userForm.value.name}}</h1>
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" formControlName="first_name">
+    </div>
+      <div class="form-group">
+        <label for="last_name">Sobrenome</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Sobrenome" formControlName="last_name">
+      </div>
+      <div class="form-group" *ngIf="userForm && userForm.value && userForm.value.avatar">
+        <img [src]="userForm.value.avatar">
+      </div>
+      <a href="/">
+        <button type="button" class="btn btn-primary" name="button">Voltar para a Listagem</button>
+      </a>
+    </form>
+</div>
